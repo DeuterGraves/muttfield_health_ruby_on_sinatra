@@ -78,6 +78,14 @@ def self.find(id)
 end
 
 # delete(id)
+def self.delete(id)
+  sql = "DELETE FROM courses
+  WHERE ID = $1;"
+
+  values = [id]
+  data = SqlRunner.run(sql,values)
+
+end
 
 
 # class end

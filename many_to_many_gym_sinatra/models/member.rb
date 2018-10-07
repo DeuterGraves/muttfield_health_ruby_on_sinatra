@@ -79,7 +79,14 @@ end
 
 # delete(id)
 
+def self.delete(id)
+  sql = "DELETE FROM members
+  WHERE ID = $1;"
 
+  values = [id]
+  data = SqlRunner.run(sql,values)
+
+end
 
 # end class
 end
