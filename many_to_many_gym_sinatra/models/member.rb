@@ -11,6 +11,42 @@ def initialize(options)
   @l_name = options["l_name"]
 end
 
+# single_result
+
+def self.hash_result(data)
+  member_hash = data[0]
+  member = Member.new(member_hash)
+end
+
+# map_items
+
+def self.map_items(data)
+  result = data.map{|details| Member.new(details) }
+  return result
+end
+
+
+# delete all
+def self.delete_all()
+  sql = "DELETE FROM members;"
+  SqlRunner.run(sql)
+end
+
+# save
+def save()
+  sql = "INSERT into members(f_name, l_name)
+  VALUES($1, $2)
+  RETURNING id;"
+
+  values = [@f_name, @l_name]
+  result = SqlRunner.run(sql, values)
+  result_hash = result[0]
+  string_id = result_hash["id"]
+  @id = string_id.to_i
+end
+
+
+
 
 # end class
 end
