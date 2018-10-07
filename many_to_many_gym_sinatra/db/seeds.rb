@@ -31,6 +31,8 @@ course3 = Course.new({"type" => "Jazzercise"})
 course1.save()
 course2.save()
 course3.save()
+course1.type = "Yoga"
+course1.update()
 
 session1 = Session.new({"course_id" => course1.id, "start_time" => "10:00"})
 session2 = Session.new({"course_id" => course2.id, "start_time" => "11:00"})
@@ -40,9 +42,16 @@ session1.save()
 session2.save()
 session3.save()
 
+session1.course_id = course2.id
+session1.update()
+session2.course_id = course1.id
+session2.update()
+session3.start_time = "16:00"
+session3.update()
+
 booking1 = Booking.new({"session_id" => session1.id, "member_id" => member1.id})
 booking2 = Booking.new({"session_id" => session2.id, "member_id" => member2.id})
-booking3 = Booking.new({"session_id" => session3.id, "member_id" => member3.id})
+booking3 = Booking.new({"session_id" => session2.id, "member_id" => member3.id})
 
 booking1.save()
 booking2.save()

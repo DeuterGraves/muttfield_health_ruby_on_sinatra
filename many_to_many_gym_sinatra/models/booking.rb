@@ -46,6 +46,25 @@ def save()
 end
 
 
+# update
+
+def update()
+  sql = "UPDATE courses
+  SET (session_id, member_id)
+  = $1, $2
+  WHERE id = $3"
+
+  values = [@session_id, @member_id, @id]
+  SqlRunner.run(sql,values)
+end
+
+# find_all
+
+# find(id)
+
+# delete(id)
+
+
 
 # class end
 end

@@ -45,5 +45,24 @@ def save()
 end
 
 
+# update
+
+def update()
+  sql = "UPDATE courses
+  SET type
+  = $1
+  WHERE id = $2;"
+
+  values = [@type, @id]
+  SqlRunner.run(sql,values)
+end
+
+# find_all
+
+# find(id)
+
+# delete(id)
+
+
 # class end
 end

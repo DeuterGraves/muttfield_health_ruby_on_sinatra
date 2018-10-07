@@ -34,6 +34,7 @@ end
 
 # save
 def save()
+
   sql = "INSERT into sessions(course_id, start_time)
   VALUES($1, $2)
   RETURNING id;"
@@ -44,6 +45,25 @@ def save()
   string_id = result_hash["id"]
   @id = string_id.to_i
 end
+
+# update
+
+def update()
+  sql = "UPDATE sessions
+  SET(course_id, start_time)
+  = ($1, $2)
+  WHERE id = $3;"
+
+  values = [@course_id, @start_time, @id]
+  SqlRunner.run(sql,values)
+end
+
+# find_all
+
+# find(id)
+
+# delete(id)
+
 
 #class end
 end
