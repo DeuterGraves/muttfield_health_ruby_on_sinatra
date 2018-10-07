@@ -67,6 +67,16 @@ end
 
 # find(id)
 
+def self.find(id)
+  sql = "Select * FROM members
+  WHERE ID = $1;"
+
+  values = [id]
+  data = SqlRunner.run(sql,values)
+  Member.hash_result(data)
+
+end
+
 # delete(id)
 
 

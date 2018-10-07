@@ -61,13 +61,23 @@ end
 # find_all
 
 def self.find_all()
-  sql = "SELECT * from sessions;"
+  sql = "SELECT * FROM sessions;"
 
   result = SqlRunner.run(sql)
   Session.map_items(result)
 end
 
 # find(id)
+
+def self.find(id)
+  sql = "Select * FROM sessions
+  WHERE ID = $1;"
+
+  values = [id]
+  data = SqlRunner.run(sql,values)
+  Session.hash_result(data)
+
+end
 
 # delete(id)
 

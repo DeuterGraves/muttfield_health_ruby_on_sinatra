@@ -61,13 +61,23 @@ end
 # find_all
 
 def self.find_all()
-  sql = "SELECT * from bookings;"
+  sql = "SELECT * FROM bookings;"
 
   result = SqlRunner.run(sql)
   Booking.map_items(result)
 end
 
 # find(id)
+
+def self.find(id)
+  sql = "Select * FROM bookings
+  WHERE ID = $1;"
+
+  values = [id]
+  data = SqlRunner.run(sql,values)
+  Booking.hash_result(data)
+
+end
 
 # delete(id)
 
