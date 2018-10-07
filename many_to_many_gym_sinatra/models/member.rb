@@ -34,7 +34,7 @@ end
 
 # save
 def save()
-  sql = "INSERT into members(f_name, l_name)
+  sql = "INSERT INTO members(f_name, l_name)
   VALUES($1, $2)
   RETURNING id;"
 
@@ -45,6 +45,23 @@ def save()
   @id = string_id.to_i
 end
 
+# update
+def update()
+  sql = "UPDATE members
+  SET(f_name, l_name)
+  = ($1, $2)
+  WHERE id = $3;"
+
+  values = [@f_name, @l_name, @id]
+  SqlRunner.run(sql, values)
+end
+
+
+# find_all
+
+# find(id)
+
+# delete(id)
 
 
 

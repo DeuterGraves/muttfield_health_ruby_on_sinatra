@@ -19,6 +19,11 @@ member1.save()
 member2.save()
 member3.save()
 
+member1.l_name = "Graves"
+member1.update()
+member2.f_name = "Caroline"
+member2.update()
+
 course1 = Course.new({"type" => "Yogurt"})
 course2 = Course.new({"type" => "Swimming"})
 course3 = Course.new({"type" => "Jazzercise"})
