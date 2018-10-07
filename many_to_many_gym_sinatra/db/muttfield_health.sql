@@ -19,9 +19,10 @@ CREATE TABLE sessions(
   id SERIAL8 PRIMARY KEY,
   course_id INT8 REFERENCES courses(id) ON DELETE CASCADE,
   hour VARCHAR(255)
+  -- title
   -- capacity
   -- price/member level
-  --  day
+  -- day
 );
 
 CREATE TABLE bookings(
