@@ -60,6 +60,13 @@ end
 
 # find_all
 
+def self.find_all()
+  sql = "SELECT * from bookings;"
+
+  result = SqlRunner.run(sql)
+  Booking.map_items(result)
+end
+
 # find(id)
 
 # delete(id)

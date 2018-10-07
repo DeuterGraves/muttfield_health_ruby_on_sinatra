@@ -56,8 +56,14 @@ def update()
   SqlRunner.run(sql, values)
 end
 
-
 # find_all
+
+def self.find_all()
+  sql = "SELECT * from members;"
+
+  result = SqlRunner.run(sql)
+  Member.map_items(result)
+end
 
 # find(id)
 

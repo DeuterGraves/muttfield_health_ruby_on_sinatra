@@ -56,3 +56,6 @@ booking3 = Booking.new({"session_id" => session2.id, "member_id" => member3.id})
 booking1.save()
 booking2.save()
 booking3.save()
+
+binding.pry 
+p "let's get physical"

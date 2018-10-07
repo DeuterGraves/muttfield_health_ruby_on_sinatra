@@ -59,6 +59,13 @@ end
 
 # find_all
 
+def self.find_all()
+  sql = "SELECT * from courses;"
+
+  result = SqlRunner.run(sql)
+  Course.map_items(result)
+end
+
 # find(id)
 
 # delete(id)

@@ -60,6 +60,13 @@ end
 
 # find_all
 
+def self.find_all()
+  sql = "SELECT * from sessions;"
+
+  result = SqlRunner.run(sql)
+  Session.map_items(result)
+end
+
 # find(id)
 
 # delete(id)
