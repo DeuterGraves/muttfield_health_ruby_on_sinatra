@@ -14,13 +14,6 @@ get "/members/new" do
   erb(:"members/new")
 end
 
-# CREATE
-post "/members/:id" do
-  @member = Member.new(params)
-  @member.save()
-  redirect to("/members/#{@member.id}")
-end
-
 # SHOW
 get "/members/:id" do
   @member = Member.find(params[:id])
@@ -29,10 +22,26 @@ get "/members/:id" do
 end
 # needs: delete, book a class for a member
 
+# CREATE
+post "/members/:id" do
+  @member = Member.new(params)
+  @member.save()
+  redirect to("/members/#{@member.id}")
+end
+
+
 # EDIT
 get "/members/:id/edit" do
   @member = Member.find(params[:id])
   erb(:"members/edit")
+end
+
+
+# DELETE
+post "/members/:id/delete" do
+  member = Member.find(params[:id])
+  member.delete()
+  redirect to "/members"
 end
 
 # UPDATE

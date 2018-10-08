@@ -78,13 +78,22 @@ def self.find(id)
 end
 
 # delete(id)
+#
+# def self.delete(id)
+#   sql = "DELETE FROM members
+#   WHERE ID = $1;"
+#
+#   values = [id]
+#   data = SqlRunner.run(sql,values)
+#
+# end
 
-def self.delete(id)
+def delete()
   sql = "DELETE FROM members
   WHERE ID = $1;"
 
-  values = [id]
-  data = SqlRunner.run(sql,values)
+  values = [@id]
+  SqlRunner.run(sql,values)
 
 end
 
