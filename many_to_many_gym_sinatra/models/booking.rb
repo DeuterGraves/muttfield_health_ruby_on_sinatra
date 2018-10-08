@@ -49,10 +49,10 @@ end
 # update
 
 def update()
-  sql = "UPDATE courses
-  SET (session_id, member_id)
-  = $1, $2
-  WHERE id = $3"
+  sql = "UPDATE bookings
+  SET(session_id, member_id)
+  = ($1, $2)
+  WHERE id = $3;"
 
   values = [@session_id, @member_id, @id]
   SqlRunner.run(sql,values)

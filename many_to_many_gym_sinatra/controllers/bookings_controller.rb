@@ -32,3 +32,8 @@ end
 # DELETE
 
 # UPDATE
+post "/bookings/:id/edit" do
+  @booking = Booking.new(params)
+  @booking.update()
+  redirect to("/bookings/#{@booking.id}")
+end
