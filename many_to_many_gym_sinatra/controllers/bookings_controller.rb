@@ -22,6 +22,9 @@ end
 
 # Edit
 get "/bookings/:id/edit" do
+  #@courses = Course.all()
+  @sessions = Session.all()
+  @members = Member.all()
   @booking = Booking.find(params[:id])
   erb(:"bookings/edit")
 end
