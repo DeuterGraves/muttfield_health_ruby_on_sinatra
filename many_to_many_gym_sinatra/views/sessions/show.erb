@@ -1,5 +1,10 @@
 <h1>Session Details:</h1>
-<p><%= @session.course.type %> - <%= @session.start_time %> update/delete</p>
+<p><%= @session.course.type %> - <%= @session.start_time %> <form class="" action="/sessions/<%= @session.id %>/edit" method="get">
+  <input type="submit" name="" value="Update Details">
+</form>
+<form class="" action="/sessions/<%= @session.id %>/delete" method="post">
+  <input type="submit" name="" value="Delete Session">
+</form> </p>
 <h2>Members Registered</h2>
 <hr>
 <% @members.each do |member| %>

@@ -49,5 +49,5 @@ end
 post "/sessions/:id/edit" do
   @session = Session.new(params)
   @session.update()
-  redirect to("/sessions#{@session.id}")
+  redirect to("/sessions/#{@session.id}")
 end
