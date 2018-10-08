@@ -1,0 +1,9 @@
+<h1>Session Details:</h1>
+<p><%= @session.course.type %> - <%= @session.start_time %> update/delete</p>
+<h2>Members Registered</h2>
+<hr>
+<% @members.each do |member| %>
+<p><%= member.member_name() %></p>
+<p>update / delete</p>
+<hr>
+<% end %>

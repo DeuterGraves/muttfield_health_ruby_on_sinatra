@@ -103,7 +103,7 @@ def members()
 
 end
 
-# return course id
+# return course name/type
 def course()
   #get the course for the course_id in the session
   sql ="SELECT * from courses

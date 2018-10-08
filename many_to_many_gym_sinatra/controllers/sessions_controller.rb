@@ -17,6 +17,12 @@ get "/sessions/new" do
 end
 
 # SHOW
+get "/sessions/:id" do
+  @session = Session.find(params[:id])
+  @members = @session.members()
+  erb(:"sessions/show")
+end
+# need update/delete booking
 
 # CREATE
 post "/sessions/:id" do

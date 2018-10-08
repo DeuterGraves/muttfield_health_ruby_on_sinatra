@@ -38,10 +38,14 @@ member2.update()
 course1 = Course.new({"type" => "Yogurt"})
 course2 = Course.new({"type" => "Swimming"})
 course3 = Course.new({"type" => "Jazzercise"})
+course4 = Course.new({"type" => "Mousercise"})
+course5 = Course.new({"type" => "Absanity"})
 
 course1.save()
 course2.save()
 course3.save()
+course4.save()
+course5.save()
 course1.type = "Yoga"
 course1.update()
 
