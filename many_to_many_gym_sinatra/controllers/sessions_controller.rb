@@ -15,3 +15,12 @@ get "/sessions/new" do
   @courses = Course.all()
   erb(:"sessions/new")
 end
+
+# SHOW
+
+# CREATE
+post "/sessions/:id" do
+  @session = Session.new(params)
+  @session.save()
+  redirect to("/sessions/#{@session.id}")
+end
