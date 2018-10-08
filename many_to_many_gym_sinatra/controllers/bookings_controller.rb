@@ -30,6 +30,12 @@ get "/bookings/:id/edit" do
 end
 
 # DELETE
+post "/bookings/:id/delete" do
+  booking = Booking.find(params[:id])
+  booking.delete()
+  redirect to "/"
+  # for now this redirects to home - but it does delete
+end
 
 # UPDATE
 post "/bookings/:id/edit" do
