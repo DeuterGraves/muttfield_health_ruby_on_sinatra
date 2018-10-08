@@ -3,6 +3,8 @@ require("sinatra/contrib/all")
 require_relative("../models/member.rb")
 also_reload("../models/*")
 
+# NOT YET DONE - NEED SOME ITEMS AROUND BOOKING. 
+
 # INDEX
 get "/members" do
   @members = Member.all()

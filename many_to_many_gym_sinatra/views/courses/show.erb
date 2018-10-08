@@ -1,0 +1,12 @@
+<h1>Course Details:</h1>
+<p>Type: <%= @course.type %></p>
+<form method="get" action="/courses/<%= @course.id %>/edit">
+  <input type="submit" value="Update Details">
+</form>
+<form method="post" action="/courses/<%= @course.id %>/delete">
+<input type="submit" value="Delete Course"/></form>
+<p>Add to Schedule</p>
+<p><h2> <%= @course.type %> Schedule:</h2> </p>
+<% @sessions.each do |session| %>
+<p><%= session.course.type %> - <%= session.start_time %> </p>
+<% end %>
