@@ -88,5 +88,20 @@ def self.delete(id)
 
 end
 
+# find sessions booked
+# here we want to return a list of sessions - no need to mix in other data.
+# we have member id - so we'll look at bookings to find the sessions the member has signed up for and then pull the data from the session table.
+def sessions()
+  sql = "SELECT sessions.* FROM sessions
+  INNER JOIN bookings
+  ON sessions.id = bookings.session_id
+  WHERE member_id = $1
+  ;"
+
+  result = SqlRunner.run(sql, [@id])
+  Session.map_items(result)
+
+end
+
 # end class
 end

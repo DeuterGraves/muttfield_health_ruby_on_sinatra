@@ -90,5 +90,18 @@ def self.delete(id)
 
 end
 
+def members()
+  # we want the members for this session SO! we don't NEED the session table, just the session ID - we will be calling this on a session - the ID will be there, take session id to booking table to get the member id take that to member table to pull the members' data.
+  sql = "SELECT members.* FROM members
+  INNER JOIN bookings
+  ON members.id = bookings.member_id
+  WHERE session_id = $1
+  ;"
+
+  result = SqlRunner.run(sql, [@id])
+  Member.map_items(result)
+
+end
+
 #class end
 end
