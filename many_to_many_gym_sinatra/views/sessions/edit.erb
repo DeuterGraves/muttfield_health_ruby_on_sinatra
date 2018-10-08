@@ -1,0 +1,12 @@
+<h1>Edit Session Details</h1>
+<form class="" action="/sessions/<%= @session.id %>/edit" method="post">
+  <label for="course-selection">Course:</label>
+  <select class="" name="course_id" id="course-selection">
+    <% for course in @courses %>
+    <option value="<%= course.id %>" <%= "selected" if @session.course.type ==course.type %>><%= course.type %></option>
+    <% end %>
+  </select>
+  <label for="start-time-field">Start Time</label>
+  <input type="time" name="start_time" value="<%= @session.start_time %>" id="start-time-field">
+  <input type="submit" name="" value="Update Schedule">
+</form>

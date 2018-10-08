@@ -30,3 +30,24 @@ post "/sessions/:id" do
   @session.save()
   redirect to("/sessions/#{@session.id}")
 end
+
+# EDIT
+get "/sessions/:id/edit" do
+  @courses = Course.all()
+  @session = Session.find(params[:id])
+  erb(:"sessions/edit")
+end
+
+# DELETE
+post "/sessions/:id/delete" do
+  session = Session.find(params[:id])
+  session.delete()
+  redirect to "/sessions"
+end
+
+# UPDATE
+post "/sessions/:id/edit" do
+  @session = Session.new(params)
+  @session.update()
+  redirect to("/sessions#{@session.id}")
+end
