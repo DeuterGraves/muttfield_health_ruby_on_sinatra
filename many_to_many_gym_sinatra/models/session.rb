@@ -103,6 +103,27 @@ def members()
 
 end
 
+# return course id
+def course()
+  #get the course for the course_id in the session
+  sql ="SELECT * from courses
+  WHERE id = $1;"
+
+  values = [@course_id]
+  data = SqlRunner.run(sql,values)
+  Course.hash_result(data)
+end
+
+# def course()
+#   # we want the course title for this session so we need the course id from this session - easy @course_id
+#   # here we have a session Id - we want to go to the course ID from session details
+#   @course_id
+#   #and use that to get the course type
+#   sql = "SELECT course.* FROM courses
+#   INNER JOIN bookings
+#   ON courses.id = ;"
+# end
+
 
 #class end
 end

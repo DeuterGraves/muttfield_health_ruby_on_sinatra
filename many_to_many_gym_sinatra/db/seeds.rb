@@ -49,7 +49,7 @@ session1 = Session.new({"course_id" => course1.id, "start_time" => "10:00"})
 session2 = Session.new({"course_id" => course2.id, "start_time" => "11:00"})
 session3 = Session.new({"course_id" => course3.id, "start_time" => "14:00"})
 session4 = Session.new({"course_id" => course2.id, "start_time" => "13:00"})
-session5 = Session.new({"course_id" => course1.id, "start_time" => "-6:00"})
+session5 = Session.new({"course_id" => course1.id, "start_time" => "6:00"})
 
 session1.save()
 session2.save()
