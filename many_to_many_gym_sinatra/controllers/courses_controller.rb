@@ -21,6 +21,7 @@ get "/courses/:id" do
   @sessions = @course.sessions()
   erb(:"courses/show")
 end
+# needs: links add course to schedule and edit/update for the existing scheduled items
 
 # CREATE
 post "/courses/:id" do

@@ -1,0 +1,8 @@
+<h1>Class Schedule</h1>
+<p>Add Class to Schedule (this will be a link)</p>
+<hr>
+<% @sessions.each do |session| %>
+<p> <%= session.course_id %> - <%= session.start_time %> </p>
+<p><a href="/sessions/<%= session.id %>">Session Details</a> </p>
+<hr>
+<% end %>

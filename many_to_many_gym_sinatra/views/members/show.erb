@@ -5,8 +5,8 @@
 </form>
   <form method="post" action="/members/<%= @member.id %>/delete">
   <input type="submit" value="Delete Member"/></form></p>
-<p>Book a session</p>
+<p>Book a session (this will be a link)</p>
 <p>Sessions:</p>
 <% @sessions.each do |session| %>
-<p><%= session.course.type %> - <%= session.start_time %> </p>
+<p><%= session.course.type %> - <%= session.start_time %> update/delete</p>
 <% end %>
