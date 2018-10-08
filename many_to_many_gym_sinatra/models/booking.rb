@@ -60,7 +60,7 @@ end
 
 # find_all
 
-def self.find_all()
+def self.all()
   sql = "SELECT * FROM bookings;"
 
   result = SqlRunner.run(sql)

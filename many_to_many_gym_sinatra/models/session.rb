@@ -60,7 +60,7 @@ end
 
 # find_all
 
-def self.find_all()
+def self.all()
   sql = "SELECT * FROM sessions;"
 
   result = SqlRunner.run(sql)
@@ -102,6 +102,7 @@ def members()
   Member.map_items(result)
 
 end
+
 
 #class end
 end

@@ -59,7 +59,7 @@ end
 
 # find_all
 
-def self.find_all()
+def self.all()
   sql = "SELECT * FROM courses;"
 
   result = SqlRunner.run(sql)

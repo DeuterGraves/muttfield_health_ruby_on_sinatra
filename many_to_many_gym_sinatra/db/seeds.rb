@@ -61,6 +61,7 @@ session1.course_id = course2.id
 session1.update()
 session2.course_id = course1.id
 session2.update()
+binding.pry
 session3.start_time = "16:00"
 session3.update()
 
