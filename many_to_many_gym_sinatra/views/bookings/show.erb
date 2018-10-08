@@ -1,0 +1,10 @@
+<h1>Booking Details:</h1>
+<hr>
+
+<p>Member: <a href="/members/<%= @booking.member.id %>"><%= @booking.member.member_name %></a></p>
+<p>Session: <a href="/sessions/<%= @booking.session.id %>"><%= @booking.session.course.type %> - <%= @booking.session.start_time %></a> </p>
+<form method="get" action="/bookings/<%= @booking.id %>/edit">
+  <input type="submit" value="Update Details">
+</form>
+<form method="post" action="/bookings/<%= @booking.id %>/delete">
+<input type="submit" value="Delete Course"/></form>

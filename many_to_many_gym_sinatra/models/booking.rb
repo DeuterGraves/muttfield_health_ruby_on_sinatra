@@ -80,13 +80,34 @@ def self.find(id)
 end
 
 # delete(id)
-def self.delete(id)
+def delete()
   sql = "DELETE FROM bookings
   WHERE ID = $1;"
 
   values = [id]
-  data = SqlRunner.run(sql,values)
+  SqlRunner.run(sql,values)
 
+end
+
+# member
+
+def member()
+  sql = "Select * from members
+  WHERE id = $1;"
+
+  values = [@member_id]
+  data = SqlRunner.run(sql,values)
+  Member.hash_result(data)
+end
+
+# session
+def session()
+  sql = "SELECT * from sessions
+  WHERE id = $1;"
+
+  values = [@session_id]
+  data = SqlRunner.run(sql, values)
+  Session.hash_result(data)
 end
 
 
