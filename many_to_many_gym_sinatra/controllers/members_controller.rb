@@ -20,7 +20,7 @@ get "/members/:id" do
   @sessions = @member.sessions()
   erb(:"members/show")
 end
-# needs: delete, book a class for a member
+# needs:book a session for a member, edit and update existing sessions
 
 # CREATE
 post "/members/:id" do
