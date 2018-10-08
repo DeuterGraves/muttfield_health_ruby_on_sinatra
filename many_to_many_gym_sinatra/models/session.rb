@@ -81,12 +81,12 @@ end
 
 # delete(id)
 
-def self.delete(id)
+def delete()
   sql = "DELETE FROM sessions
   WHERE ID = $1;"
 
   values = [id]
-  data = SqlRunner.run(sql,values)
+  SqlRunner.run(sql,values)
 
 end
 
