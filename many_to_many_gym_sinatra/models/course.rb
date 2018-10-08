@@ -77,7 +77,7 @@ def self.find(id)
 end
 
 # delete(id)
-def self.delete(id)
+def delete()
   sql = "DELETE FROM courses
   WHERE ID = $1;"
 
