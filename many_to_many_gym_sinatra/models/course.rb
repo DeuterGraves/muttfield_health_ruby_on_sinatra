@@ -49,8 +49,7 @@ end
 
 def update()
   sql = "UPDATE courses
-  SET type
-  = $1
+  SET type = $1
   WHERE id = $2;"
 
   values = [@type, @id]

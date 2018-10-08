@@ -15,11 +15,10 @@ get "/courses/new" do
   erb(:"courses/new")
 end
 
-# SHOW - old
+# SHOW
 get "/courses/:id" do
   @course = Course.find(params[:id])
   @sessions = @course.sessions()
-  # @courses = Course.all()
   erb(:"courses/show")
 end
 
@@ -31,7 +30,7 @@ post "/courses/:id" do
 end
 
 
-# EDIT - old
+# EDIT
 get "/courses/:id/edit" do
   @course = Course.find(params[:id])
   erb(:"courses/edit")
@@ -45,9 +44,9 @@ post "/courses/:id/delete" do
   redirect to "/courses"
 end
 
-# UPDATE - old
+# UPDATE
 post "/courses/:id/edit" do
   @course = Course.new(params)
   @course.update()
-  redirect to("/courses/#{@member.id}")
+  redirect to("/courses/#{@course.id}")
 end
