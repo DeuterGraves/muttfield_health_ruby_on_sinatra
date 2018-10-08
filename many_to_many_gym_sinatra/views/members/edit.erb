@@ -1,0 +1,9 @@
+<h1>Edit Member Details</h1>
+<form class="" action="/members/<%= @member.id %>/edit" method="post">
+  <label for="f-name-field">First Name:</label>
+  <input type="text" name="f_name" value="<%= @member.f_name %>" id="f-name-field">
+  <label for="l-name-field">Last Name:</label>
+  <input type="text" name="l_name" value="<%= @member.l_name %>" id="l-name-field">
+  <input type="submit" name="" value="Edit Member">
+
+</form>
