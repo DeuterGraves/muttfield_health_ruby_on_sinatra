@@ -9,3 +9,9 @@ get "/sessions" do
   @sessions = Session.all()
   erb(:"sessions/index")
 end
+
+# NEW
+get "/sessions/new" do
+  @courses = Course.all()
+  erb(:"sessions/new")
+end
