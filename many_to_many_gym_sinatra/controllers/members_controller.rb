@@ -3,7 +3,7 @@ require("sinatra/contrib/all")
 require_relative("../models/member.rb")
 also_reload("../models/*")
 
-# NOT YET DONE - NEED SOME ITEMS AROUND BOOKING. 
+# NOT YET DONE - NEED SOME ITEMS AROUND BOOKING.
 
 # INDEX
 get "/members" do
@@ -20,6 +20,7 @@ end
 get "/members/:id" do
   @member = Member.find(params[:id])
   @sessions = @member.sessions()
+  #@bookings = @session.bookings()
   erb(:"members/show")
 end
 # needs:book a session for a member, edit and update existing sessions

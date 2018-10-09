@@ -5,8 +5,19 @@
 </form>
   <form method="post" action="/members/<%= @member.id %>/delete">
   <input type="submit" value="Delete Member"/></form></p>
-<p>Book a session (this will be a link)</p>
-<p>Sessions:</p>
+<p><a href="/bookings/<%= @member.id %>/new"> Book a session</a></p>
+<hr>
+<h2>Sessions:</h2>
+<hr>
 <% @sessions.each do |session| %>
-<p><%= session.course.type %> - <%= session.start_time %> update/delete</p>
+<p><%= session.course.type %> - <%= session.start_time %></p>
+<p>
+  <form method="get" action="/bookings/<%= session.booking().id %>/edit">
+  <input type="submit" value="Update Booking"/>
+</form>
+  <form method="post" action="/bookings/<%= session.booking().id %>/delete">
+  <input type="submit" value="Delete Booking"/>
+</form>
+</p>
+<hr>
 <% end %>
