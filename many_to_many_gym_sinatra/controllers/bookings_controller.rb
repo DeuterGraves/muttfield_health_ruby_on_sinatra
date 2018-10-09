@@ -19,6 +19,16 @@ end
 
 # NEW - from session - session prepoulated
 
+get "/bookings/:id/s_new" do
+  #@courses = Course.all()
+  # pass in the exact member!!!
+  @this_session = Session.find(params[:id])
+  @sessions = Session.all()
+  @members = Member.all()
+  erb(:"bookings/s_new")
+end
+
+
 # SHOW - this will be a confirmation page will need to link somewhere from here?
 get "/bookings/:id" do
   @booking = Booking.find(params[:id])
@@ -30,7 +40,7 @@ end
 post "/bookings/:id" do
   @booking = Booking.new(params)
   @booking.save()
-  redirect to("/members/#{@booking.member_id}")
+  redirect to("/bookings/#{@booking.id}")
 end
 
 # Edit
