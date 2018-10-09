@@ -54,10 +54,9 @@ end
 
 # DELETE
 post "/bookings/:id/delete" do
-  booking = Booking.find(params[:id])
-  booking.delete()
-  redirect to "/"
-  # for now this redirects to home - but it does delete
+  @booking = Booking.find(params[:id])
+  @booking.delete()
+  erb(:"bookings/destroy")
 end
 
 # UPDATE

@@ -1,0 +1,4 @@
+<h1>This booking was deleted!</h1>
+
+<p>Book a different session for <a href="/bookings/<%= @booking.member().id %>/new"> <%= @booking.member().member_name %></a>?</p>
+<p>Book someone else into the <a href="/bookings/<%= @booking.session().id %>/s_new"><%= @booking.session().course().type %> session</a>?</p>
