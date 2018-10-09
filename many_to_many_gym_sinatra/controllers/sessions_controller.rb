@@ -29,7 +29,6 @@ get "/sessions/:id" do
   @members = @session.members()
   erb(:"sessions/show")
 end
-# need update/delete booking
 
 # CREATE
 post "/sessions/:id" do

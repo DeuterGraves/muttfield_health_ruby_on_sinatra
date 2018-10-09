@@ -34,8 +34,8 @@ end
 # save
 def save()
   sql = "INSERT into courses(type)
-  VALUES($1)
-  RETURNING id;"
+    VALUES($1)
+    RETURNING id;"
 
   values = [@type]
   result = SqlRunner.run(sql, values)
@@ -49,8 +49,8 @@ end
 
 def update()
   sql = "UPDATE courses
-  SET type = $1
-  WHERE id = $2;"
+    SET type = $1
+    WHERE id = $2;"
 
   values = [@type, @id]
   SqlRunner.run(sql,values)
@@ -68,7 +68,7 @@ end
 # find(id)
 def self.find(id)
   sql = "Select * FROM courses
-  WHERE ID = $1;"
+    WHERE ID = $1;"
 
   values = [id]
   data = SqlRunner.run(sql,values)
@@ -79,25 +79,20 @@ end
 # delete(id)
 def delete()
   sql = "DELETE FROM courses
-  WHERE ID = $1;"
+    WHERE ID = $1;"
 
   values = [id]
   data = SqlRunner.run(sql,values)
 end
 
-# find sessions for this course. should be no duplicates
-# here we want to return a list of sessions - no need to mix in other data.
-# we have course id - so we'll look at sessions to find the sessions for this course and then pull the data from the session table.
 def sessions()
   sql = "SELECT sessions.* FROM sessions
-  INNER JOIN courses
-  ON sessions.course_id = courses.id
-  WHERE course_id = $1
-  ;"
+    INNER JOIN courses
+    ON sessions.course_id = courses.id
+    WHERE course_id = $1;"
 
   result = SqlRunner.run(sql, [@id])
   Session.map_items(result)
-
 end
 
 # class end

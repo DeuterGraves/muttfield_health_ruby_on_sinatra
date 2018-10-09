@@ -35,8 +35,8 @@ end
 # save
 def save()
   sql = "INSERT INTO members(f_name, l_name)
-  VALUES($1, $2)
-  RETURNING id;"
+    VALUES($1, $2)
+    RETURNING id;"
 
   values = [@f_name, @l_name]
   result = SqlRunner.run(sql, values)
@@ -48,9 +48,9 @@ end
 # update
 def update()
   sql = "UPDATE members
-  SET(f_name, l_name)
-  = ($1, $2)
-  WHERE id = $3;"
+    SET(f_name, l_name)
+    = ($1, $2)
+    WHERE id = $3;"
 
   values = [@f_name, @l_name, @id]
   SqlRunner.run(sql, values)
@@ -69,7 +69,7 @@ end
 
 def self.find(id)
   sql = "Select * FROM members
-  WHERE ID = $1;"
+    WHERE ID = $1;"
 
   values = [id]
   data = SqlRunner.run(sql,values)
@@ -77,33 +77,21 @@ def self.find(id)
 
 end
 
-# delete(id)
-#
-# def self.delete(id)
-#   sql = "DELETE FROM members
-#   WHERE ID = $1;"
-#
-#   values = [id]
-#   data = SqlRunner.run(sql,values)
-#
-# end
 
 def delete()
   sql = "DELETE FROM members
-  WHERE ID = $1;"
+    WHERE ID = $1;"
 
   values = [@id]
   SqlRunner.run(sql,values)
-
 end
 
 # find sessions booked
 def sessions()
   sql = "SELECT sessions.* FROM sessions
-  INNER JOIN bookings
-  ON sessions.id = bookings.session_id
-  WHERE member_id = $1
-  ;"
+    INNER JOIN bookings
+    ON sessions.id = bookings.session_id
+    WHERE member_id = $1;"
 
   result = SqlRunner.run(sql, [@id])
   Session.map_items(result)
@@ -113,8 +101,7 @@ end
 # find bookings for member
 def bookings()
   sql= "SELECT * from bookings
-  WHERE member_id = $1
-  ;"
+  WHERE member_id = $1;"
 
   result = SqlRunner.run(sql,[@id])
   Booking.map_items(result)
@@ -123,9 +110,8 @@ end
 def booking(session_id)
   #I will have the session id and the member id, so I need the booking id for that combo.
   sql = "SELECT * from bookings
-  WHERE session_id = $1
-  AND member_id =  $2
-  ;"
+    WHERE session_id = $1
+    AND member_id =  $2;"
 
   values = [session_id,@id]
   data = SqlRunner.run(sql,values)

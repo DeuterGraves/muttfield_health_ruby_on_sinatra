@@ -35,8 +35,8 @@ end
 # save
 def save()
   sql = "INSERT into bookings(session_id, member_id)
-  VALUES($1, $2)
-  RETURNING id;"
+    VALUES($1, $2)
+    RETURNING id;"
 
   values = [@session_id, @member_id]
   result = SqlRunner.run(sql, values)
@@ -50,9 +50,9 @@ end
 
 def update()
   sql = "UPDATE bookings
-  SET(session_id, member_id)
-  = ($1, $2)
-  WHERE id = $3;"
+    SET(session_id, member_id)
+    = ($1, $2)
+    WHERE id = $3;"
 
   values = [@session_id, @member_id, @id]
   SqlRunner.run(sql,values)
@@ -71,29 +71,27 @@ end
 
 def self.find(id)
   sql = "Select * FROM bookings
-  WHERE ID = $1;"
+    WHERE ID = $1;"
 
   values = [id]
   data = SqlRunner.run(sql,values)
   Booking.hash_result(data)
-
 end
 
 # delete(id)
 def delete()
   sql = "DELETE FROM bookings
-  WHERE ID = $1;"
+    WHERE ID = $1;"
 
   values = [id]
   SqlRunner.run(sql,values)
-
 end
 
 # member
 
 def member()
   sql = "Select * from members
-  WHERE id = $1;"
+    WHERE id = $1;"
 
   values = [@member_id]
   data = SqlRunner.run(sql,values)
@@ -103,7 +101,7 @@ end
 # session
 def session()
   sql = "SELECT * from sessions
-  WHERE id = $1;"
+    WHERE id = $1;"
 
   values = [@session_id]
   data = SqlRunner.run(sql, values)

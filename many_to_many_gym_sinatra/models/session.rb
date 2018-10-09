@@ -34,10 +34,9 @@ end
 
 # save
 def save()
-
   sql = "INSERT into sessions(course_id, start_time)
-  VALUES($1, $2)
-  RETURNING id;"
+    VALUES($1, $2)
+    RETURNING id;"
 
   values = [@course_id, @start_time]
   result = SqlRunner.run(sql, values)
@@ -50,9 +49,9 @@ end
 
 def update()
   sql = "UPDATE sessions
-  SET(course_id, start_time)
-  = ($1, $2)
-  WHERE id = $3;"
+    SET(course_id, start_time)
+    = ($1, $2)
+    WHERE id = $3;"
 
   values = [@course_id, @start_time, @id]
   SqlRunner.run(sql,values)
@@ -76,7 +75,6 @@ def self.find(id)
   values = [id]
   data = SqlRunner.run(sql,values)
   Session.hash_result(data)
-
 end
 
 # delete(id)
@@ -87,27 +85,24 @@ def delete()
 
   values = [id]
   SqlRunner.run(sql,values)
-
 end
 
 def members()
   # we want the members for this session SO! we don't NEED the session table, just the session ID - we will be calling this on a session - the ID will be there, take session id to booking table to get the member id take that to member table to pull the members' data.
   sql = "SELECT members.* FROM members
-  INNER JOIN bookings
-  ON members.id = bookings.member_id
-  WHERE session_id = $1
-  ;"
+    INNER JOIN bookings
+    ON members.id = bookings.member_id
+    WHERE session_id = $1;"
 
   result = SqlRunner.run(sql, [@id])
   Member.map_items(result)
-
 end
 
 # return course name/type
 def course()
   #get the course for the course_id in the session
   sql ="SELECT * from courses
-  WHERE id = $1;"
+    WHERE id = $1;"
 
   values = [@course_id]
   data = SqlRunner.run(sql,values)
@@ -115,10 +110,8 @@ def course()
 end
 
 def booking()
-  #I will have the session id and the member id, so I need the booking id for that combo.
   sql = "SELECT * from bookings
-  WHERE session_id = $1
-  ;"
+  WHERE session_id = $1;"
 
   values = [@id]
   data = SqlRunner.run(sql,values)
