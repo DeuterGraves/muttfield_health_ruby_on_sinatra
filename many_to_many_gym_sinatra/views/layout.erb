@@ -3,8 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Muttfield Health</title>
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
+    <section class="wrapper">
+      <header>
+        <h1>Muttfield Health</h1>
+      </header>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
@@ -13,8 +19,11 @@
         <li><a href="/sessions">Session Admin</a></li>
       </ul>
     </nav>
+    <main>
+      <%= yield %>
 
-    <%= yield %>
-
+    </main>
+    <footer> &copy 2018</footer>
+  </section>
   </body>
 </html>
