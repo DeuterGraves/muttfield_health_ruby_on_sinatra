@@ -5,8 +5,14 @@
 </form>
 <form method="post" action="/courses/<%= @course.id %>/delete">
 <input type="submit" value="Delete Course"/></form>
-<p>Add to Schedule (this will be a link)</p>
+<p><a href="/sessions/<%= @course.id %>/new">Add to Schedule</a></p>
 <p><h2> <%= @course.type %> Schedule:</h2> </p>
 <% @sessions.each do |session| %>
 <p><%= session.course.type %> - <%= session.start_time %> update/delete</p>
+<form method="get" action="/sessions/<%= session.id %>/edit">
+  <input type="submit" value="Update Session">
+</form>
+<form method="post" action="/sessions/<%= session.id %>/delete">
+<input type="submit" value="Delete Session"/></form>
+<hr>
 <% end %>

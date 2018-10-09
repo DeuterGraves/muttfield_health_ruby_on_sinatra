@@ -1,0 +1,13 @@
+<h1>Schedule a Session</h1>
+<form class="" action="/sessions/:id" method="post">
+  <label for="course-selection">Select a course:</label>
+  <select class="" name="course_id" id="course-selection">
+    <% for course in @courses %>
+    <option value="<%= course.id %>"<%= "selected" if @this_course.id == course.id %>><%= course.type %></option>
+    <% end %>
+  </select>
+  <label for="start-time-field">Start Time</label>
+  <input type="time" name="start_time" value="" id="start-time-field">
+  <input type="submit" name="" value="Schedule Session">
+
+</form>
