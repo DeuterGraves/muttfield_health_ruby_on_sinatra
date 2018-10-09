@@ -9,8 +9,6 @@ also_reload("../models/*")
 
 # NEW  - from member - member prepopulated
 get "/bookings/:id/new" do
-  #@courses = Course.all()
-  # pass in the exact member!!!
   @this_member = Member.find(params[:id])
   @sessions = Session.all()
   @members = Member.all()
@@ -20,8 +18,6 @@ end
 # NEW - from session - session prepoulated
 
 get "/bookings/:id/s_new" do
-  #@courses = Course.all()
-  # pass in the exact member!!!
   @this_session = Session.find(params[:id])
   @sessions = Session.all()
   @members = Member.all()
@@ -29,7 +25,7 @@ get "/bookings/:id/s_new" do
 end
 
 
-# SHOW - this will be a confirmation page will need to link somewhere from here?
+# SHOW
 get "/bookings/:id" do
   @booking = Booking.find(params[:id])
   erb(:"/bookings/show")
@@ -45,7 +41,6 @@ end
 
 # Edit
 get "/bookings/:id/edit" do
-  #@courses = Course.all()
   @sessions = Session.all()
   @members = Member.all()
   @booking = Booking.find(params[:id])

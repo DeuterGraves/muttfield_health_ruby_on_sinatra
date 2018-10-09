@@ -21,7 +21,6 @@ get "/courses/:id" do
   @sessions = @course.sessions()
   erb(:"courses/show")
 end
-# needs: links add course to schedule and edit/update for the existing scheduled items
 
 # CREATE
 post "/courses/:id" do
@@ -38,7 +37,7 @@ get "/courses/:id/edit" do
 end
 
 
-# DELETE -old
+# DELETE
 post "/courses/:id/delete" do
   course = Course.find(params[:id])
   course.delete()

@@ -16,7 +16,7 @@ get "/sessions/new" do
   erb(:"sessions/new")
 end
 
-# NEW - prepopulated  from course page
+# NEW - prepopulated from course page
 get "/sessions/:id/new" do
   @this_course = Course.find(params[:id])
   @courses = Course.all()

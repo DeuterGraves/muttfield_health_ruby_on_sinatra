@@ -1,7 +1,7 @@
 <h1>Course Details:</h1>
 <p>Type: <%= @course.type %></p>
 <form method="get" action="/courses/<%= @course.id %>/edit">
-  <input type="submit" value="Update Details">
+  <input type="submit" value="Update Course">
 </form>
 <form method="post" action="/courses/<%= @course.id %>/delete">
 <input type="submit" value="Delete Course"/></form>
