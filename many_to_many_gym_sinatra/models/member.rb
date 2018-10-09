@@ -120,6 +120,18 @@ def bookings()
   Booking.map_items(result)
 end
 
+def booking(session_id)
+  #I will have the session id and the member id, so I need the booking id for that combo.
+  sql = "SELECT * from bookings
+  WHERE session_id = $1
+  AND member_id =  $2
+  ;"
+
+  values = [session_id,@id]
+  data = SqlRunner.run(sql,values)
+  Booking.hash_result(data)
+end
+
 
 def member_name()
   return "#{@f_name} #{@l_name}"
