@@ -5,9 +5,17 @@ require_relative("../models/session.rb")
 require_relative("../models/member.rb")
 also_reload("../models/*")
 
-# SKIP INDEX for now.
+# SKIP INDEX for now. Extension
 
 # NEW  - from member - member prepopulated
+get "/bookings/:id/new" do
+  #@courses = Course.all()
+  # pass in the exact member!!!
+  @this_member = Member.find(params[:id])
+  @sessions = Session.all()
+  @members = Member.all()
+  erb(:"bookings/m_new")
+end
 
 # NEW - from session - session prepoulated
 
@@ -19,6 +27,11 @@ end
 
 
 # CREATE - same for both new
+post "/bookings/:id" do
+  @booking = Booking.new(params)
+  @booking.save()
+  redirect to("/members/#{@booking.member_id}")
+end
 
 # Edit
 get "/bookings/:id/edit" do
