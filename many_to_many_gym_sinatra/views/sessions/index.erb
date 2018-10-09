@@ -2,7 +2,7 @@
 <p><a href="/sessions/new">Add Course to Schedule</a></p>
 <hr>
 <% @sessions.each do |session| %>
-<p> <%= session.course.type %> - <%= session.start_time %> </p>
-<p><a href="/sessions/<%= session.id %>">Session Details</a> </p>
-<hr>
+  <p> <%= session.course.type %> - <%= session.start_time %> </p>
+  <p><a href="/sessions/<%= session.id %>">Session Details</a> </p>
+  <hr>
 <% end %>
