@@ -59,7 +59,8 @@ end
 # find_all
 
 def self.all()
-  sql = "SELECT * FROM courses;"
+  sql = "SELECT * FROM courses
+  ORDER BY type;"
 
   result = SqlRunner.run(sql)
   Course.map_items(result)

@@ -92,7 +92,8 @@ def members()
   sql = "SELECT members.* FROM members
     INNER JOIN bookings
     ON members.id = bookings.member_id
-    WHERE session_id = $1;"
+    WHERE session_id = $1
+    ORDER BY f_name;"
 
   result = SqlRunner.run(sql, [@id])
   Member.map_items(result)
@@ -118,7 +119,16 @@ def booking()
   Booking.hash_result(data)
 end
 
+#handy: sessions sorted by start time
+def self.sorted_start_times()
+  sessions = Session.all()
+  sorted = sessions.sort_by {|session| session.start_time}
+end
 
+def self.sorted_by_course()
+  sessions = Session.all()
+  sorted = sessions.sort_by {|session| [session.course.type, session.start_time]}
+end
 
 #class end
 end

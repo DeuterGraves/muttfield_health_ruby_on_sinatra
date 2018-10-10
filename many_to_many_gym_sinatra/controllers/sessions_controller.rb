@@ -6,7 +6,7 @@ also_reload("../models/*")
 
 # INDEX
 get "/sessions" do
-  @sessions = Session.all()
+  @sessions = Session.sorted_by_course()
   erb(:"sessions/index")
 end
 

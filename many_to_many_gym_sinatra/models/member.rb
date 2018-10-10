@@ -59,7 +59,8 @@ end
 # find_all
 
 def self.all()
-  sql = "SELECT * from members;"
+  sql = "SELECT * from members
+  ORDER BY f_name;"
 
   result = SqlRunner.run(sql)
   Member.map_items(result)

@@ -10,7 +10,7 @@ also_reload("../models/*")
 # NEW  - from member - member prepopulated
 get "/bookings/:id/new" do
   @this_member = Member.find(params[:id])
-  @sessions = Session.all()
+  @sessions = Session.sorted_by_course()
   @members = Member.all()
   erb(:"bookings/m_new")
 end
@@ -19,7 +19,7 @@ end
 
 get "/bookings/:id/s_new" do
   @this_session = Session.find(params[:id])
-  @sessions = Session.all()
+  @sessions = Session.sorted_by_course()
   @members = Member.all()
   erb(:"bookings/s_new")
 end
@@ -41,7 +41,7 @@ end
 
 # Edit
 get "/bookings/:id/edit" do
-  @sessions = Session.all()
+  @sessions = Session.sorted_by_course()
   @members = Member.all()
   @booking = Booking.find(params[:id])
   erb(:"bookings/edit")

@@ -91,7 +91,8 @@ end
 
 def member()
   sql = "Select * from members
-    WHERE id = $1;"
+    WHERE id = $1
+    ORDER BY f_name;"
 
   values = [@member_id]
   data = SqlRunner.run(sql,values)
