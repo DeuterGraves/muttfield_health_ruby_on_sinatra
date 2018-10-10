@@ -95,8 +95,8 @@ def sessions()
     WHERE member_id = $1;"
 
   result = SqlRunner.run(sql, [@id])
-  Session.map_items(result)
-
+  unsorted = Session.map_items(result)
+  sorted = unsorted.sort_by{|session| [session.course.type,session.start_time]}
 end
 
 # find bookings for member
