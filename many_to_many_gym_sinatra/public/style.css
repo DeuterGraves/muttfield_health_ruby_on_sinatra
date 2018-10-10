@@ -138,6 +138,7 @@
   /* end queries */
 }
 
+/*Mobile first - BELIEVE IT OR NOT!*/
 
 .wrapper{
   /* 1 fraction and 3 fraction on the right = 4 so 1/4th, 3/4ths */
@@ -165,13 +166,14 @@ body{
 
 nav ul{
   list-style: none;
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
 }
 
 nav li{
   padding-right: 10px;
   margin-right: 10px;
+  padding-bottom:5px;
 }
 
 nav a{
