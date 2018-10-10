@@ -1,8 +1,13 @@
 <h1>Edit Course Details</h1>
 <hr>
-<form class="" action="/courses/<%= @course.id %>/edit" method="post">
-  <label for="type-field">Type:</label>
-  <input type="text" name="type" value="<%= @course.type %>" id="type-field">
-  <input type="submit" name="" value="Edit Course">
+  <form class="" action="/courses/<%= @course.id %>/edit" method="post">
+    <p>
+    <label for="type-field">Type:</label>
+    <input type="text" name="type" value="<%= @course.type %>" id="type-field">
+  </p>
+    <div class="update-delete">
+      <input type="submit" name="" value="Edit Course">
+    </div>
+  </form>
 
 </form>

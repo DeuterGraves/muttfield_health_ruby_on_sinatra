@@ -1,9 +1,131 @@
 /* first test include is even working */
-
-body{
-  font-family: verdana;
+html{
+  height: 100%;
 }
 
-h1{
-  color: green;
+body{
+  background: white url("/images/muttfieldbackground3.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right bottom;
+  font-family: verdana;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100%;
+  margin: 0;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+nav li{
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+nav a{
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+nav a:active{
+  color: #00a200;
+}
+
+nav a:hover{
+  color: #E0DBDB;
+  text-decoration: underline;
+  /* text-decoration-color: red;  */
+}
+
+a{
+  color: #893168;
+}
+
+a:active{
+  color: #893168;
+}
+
+a:hover{
+  color: #893168;
+  text-decoration: underline;
+  /* text-decoration-color: red;  */
+}
+
+h1, h2, h3{
+  color: #00a200;
+}
+
+
+.wrapper{
+  display:grid;
+  grid-template-areas: "hd"
+                       "nv"
+                       "mn"
+                       "ft";
+  /* grid-template-rows: 150px; */
+  /* padding: 20px; */
+}
+
+.wrapper > header {
+  grid-area: hd;
+  background: #00a200;
+   /* url("/images/muttfield.jpg"); */
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-repeat: no-repeat;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.wrapper > nav {
+  grid-area: nv;
+  background-color: #893168;
+  color: white;
+
+}
+.wrapper > main {
+  grid-area: mn;
+  min-height: 400px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom:10px;
+  padding-right: 25px;
+}
+.wrapper > footer {
+  grid-area: ft;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  /* height: 80px; */
+  padding: 20px;
+}
+
+.footer{
+  background: #00a200;
+  color: #fff;
+
+}
+
+.update-delete{
+  display: flex;
+  flex-direction: row;
+  font-size: .9em;
+}
+
+input[type="submit"]{
+  /* background-color: #893168; */
+  color: #893168;
+  font-family: verdana;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  text-decoration: underline;
+}
+
+form {
+
 }

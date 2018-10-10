@@ -1,18 +1,25 @@
 <h1>Book a class for a member</h1>
 <hr>
-<form class="" action="/bookings/:id" method="post">
-  <label for="member-selection">Member:</label>
-  <select class="" name="member_id" id="member-selection">
-    <% for member in @members %>
-    <option value="<%= member.id %>" <%= "selected" if @this_member.id == member.id %>><%= member.member_name %>
-    </option>
-    <% end %>
-  </select>
-<label for="session-selection">Session:</label>
-<select class="" name="session_id" id="session-selection">
-  <% for session in @sessions %>
-  <option value="<%= session.id %>"><%= session.course.type %> - <%= session.start_time %>
-  </option>
-  <% end %>
-  <input type="submit" name="" value="Save Booking">
-</select>
+  <form class="" action="/bookings/:id" method="post">
+    <p>
+    <label for="member-selection">Member:</label>
+    <select class="" name="member_id" id="member-selection">
+      <% for member in @members %>
+      <option value="<%= member.id %>" <%= "selected" if @this_member.id == member.id %>><%= member.member_name %>
+      </option>
+      <% end %>
+    </select>
+    <label for="session-selection">Session:</label>
+    <select class="" name="session_id" id="session-selection">
+      <% for session in @sessions %>
+      <option value="<%= session.id %>"><%= session.course.type %> - <%= session.start_time %>
+      </option>
+      <% end %>
+    </select>
+  </p>
+  <p>
+    <div class="update-delete">
+      <input type="submit" name="" value="Save Booking">
+    </div>
+  </p>
+  </form>

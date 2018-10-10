@@ -1,23 +1,27 @@
 <h1>Session Details:</h1>
 <p>
   <%= @session.course.type %> - <%= @session.start_time %>
-  <form class="" action="/sessions/<%= @session.id %>/edit" method="get">
-    <input type="submit" name="" value="Update Session">
-  </form>
-  <form class="" action="/sessions/<%= @session.id %>/delete" method="post">
-    <input type="submit" name="" value="Delete Session">
-  </form>
+  <div class="update-delete">
+    <form class="" action="/sessions/<%= @session.id %>/edit" method="get">
+      <input type="submit" name="" value="Update Session">
+    </form>
+    <form class="" action="/sessions/<%= @session.id %>/delete" method="post">
+      <input type="submit" name="" value="Delete Session">
+    </form>
+  </div>
 </p>
 <p><a href="/bookings/<%= @session.id %>/s_new">Book a member</a> </p>
 <h2>Members Registered</h2>
 <hr>
 <% @members.each do |member| %>
-  <p><%= member.member_name() %></p>
+<p><%= member.member_name() %></p>
+<div class="update-delete">
   <form class="" action="/bookings/<%= member.booking(@session.id).id %>/edit" method="get">
     <input type="submit" name="" value="Update Booking">
   </form>
   <form class="" action="/sessions/<%= member.booking(@session.id).id %>/delete" method="post">
     <input type="submit" name="" value="Delete Booking">
   </form>
+</div>
 <hr>
 <% end %>

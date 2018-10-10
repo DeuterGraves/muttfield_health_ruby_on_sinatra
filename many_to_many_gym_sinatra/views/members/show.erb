@@ -1,23 +1,27 @@
 <h1>Member Details:</h1>
-<p>Name: <%= @member.member_name %>
+<p>Name: <%= @member.member_name %></p>
+<div class="update-delete">
   <form method="get" action="/members/<%= @member.id %>/edit">
     <input type="submit" value="Update Member"/>
   </form>
   <form method="post" action="/members/<%= @member.id %>/delete">
     <input type="submit" value="Delete Member"/>
   </form>
-</p>
-<p><a href="/bookings/<%= @member.id %>/new"> Book a session</a></p>
+</div>
+
 <hr>
 <h2>Sessions:</h2>
+<p><a href="/bookings/<%= @member.id %>/new"> Book a session</a></p>
 <hr>
 <% @sessions.each do |session| %>
-  <p><%= session.course.type %> - <%= session.start_time %></p>
+<p><%= session.course.type %> - <%= session.start_time %></p>
+<div class="update-delete">
   <form method="get" action="/bookings/<%= session.booking().id %>/edit">
     <input type="submit" value="Update Booking"/>
   </form>
   <form method="post" action="/bookings/<%= session.booking().id %>/delete">
     <input type="submit" value="Delete Booking"/>
   </form>
-  <hr>
+</div>
+<hr>
 <% end %>
