@@ -6,8 +6,8 @@ require_relative("../models/session.rb")
 
 Member.delete_all()
 Course.delete_all()
-Member.delete_all()
-Member.delete_all()
+Booking.delete_all()
+Session.delete_all()
 
 member1 = Member.new({"f_name" => "Jamie", "l_name" => "Gains"})
 
