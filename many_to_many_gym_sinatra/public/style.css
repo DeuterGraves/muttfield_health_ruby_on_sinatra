@@ -109,6 +109,11 @@
 
   }
 
+  .detail-title{
+    font-weight: 700;
+    color: #003D00;
+  }
+
   .update-delete{
     display: flex;
     flex-direction: row;
@@ -255,6 +260,12 @@ h1, h2, h3{
   background: #00a200;
   color: #fff;
 
+}
+
+
+.detail-title{
+  color: #003D00;
+  font-weight: 700;
 }
 
 .update-delete{

@@ -2,20 +2,20 @@
 <hr>
   <form class="" action="/bookings/:id" method="post">
     <p>
-    <label for="member-selection">Member:</label>
+    <label for="member-selection">Member:
     <select class="" name="member_id" id="member-selection">
       <% for member in @members %>
       <option value="<%= member.id %>" <%= "selected" if @this_member.id == member.id %>><%= member.member_name %>
       </option>
       <% end %>
-    </select>
-    <label for="session-selection">Session:</label>
+    </select></label>
+    <label for="session-selection">Session:
     <select class="" name="session_id" id="session-selection">
       <% for session in @sessions %>
       <option value="<%= session.id %>"><%= session.course.type %> - <%= session.start_time %>
       </option>
       <% end %>
-    </select>
+    </select></label>
   </p>
   <p>
     <div class="update-delete">

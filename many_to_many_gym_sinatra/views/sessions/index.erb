@@ -1,8 +1,8 @@
 <h1>Session Schedule</h1>
-<p><a href="/sessions/new">Add Course to Schedule</a></p>
+<a href="/sessions/new">Add Course to Schedule</a>
 <hr>
 <% @sessions.each do |session| %>
-  <p> <%= session.course.type %> - <%= session.start_time %> </p>
+  <p><span class="detail-title"> <%= session.course.type %></span> - <%= session.start_time %> </p>
   <p><a href="/sessions/<%= session.id %>">Session Details</a> </p>
   <hr>
 <% end %>

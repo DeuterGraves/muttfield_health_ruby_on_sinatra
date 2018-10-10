@@ -19,7 +19,7 @@
   <form class="" action="/bookings/<%= member.booking(@session.id).id %>/edit" method="get">
     <input type="submit" name="" value="Update Booking">
   </form>
-  <form class="" action="/sessions/<%= member.booking(@session.id).id %>/delete" method="post">
+  <form class="" action="/bookings/<%= member.booking(@session.id).id %>/delete" method="post">
     <input type="submit" name="" value="Delete Booking">
   </form>
 </div>
