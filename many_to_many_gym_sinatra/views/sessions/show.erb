@@ -1,6 +1,6 @@
 <h1>Session Details:</h1>
 <p>
-  <%= @session.course.type %> - <%= @session.start_time %>
+  <span class="detail-title"><%= @session.course.type %> - <%= @session.start_time %></span>
   <div class="update-delete">
     <form class="" action="/sessions/<%= @session.id %>/edit" method="get">
       <input type="submit" name="" value="Update Session">

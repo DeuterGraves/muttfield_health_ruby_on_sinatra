@@ -1,5 +1,5 @@
 <h1>Course Details:</h1>
-<p>Type: <%= @course.type %></p>
+<p>Type: <span class="detail-title"><%= @course.type %></span></p>
 <p>
   <div class="update-delete">
     <form method="get" action="/courses/<%= @course.id %>/edit">
