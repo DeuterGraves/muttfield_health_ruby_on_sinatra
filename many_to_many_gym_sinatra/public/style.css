@@ -1,6 +1,153 @@
-/* first test include is even working */
-html{
-  height: 100%;
+/* MEDIA QUERIES */
+@media (min-width: 500px){
+  html{
+    height: 100%;
+  }
+
+  body{
+    background: white url("/images/muttfieldbackground3.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom;
+    font-family: verdana;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100%;
+    margin: 0;
+  }
+
+  nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+  }
+
+  nav li{
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+
+  nav a{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  nav a:active{
+    color: #00a200;
+  }
+
+  nav a:hover{
+    color: #E0DBDB;
+    text-decoration: underline;
+  }
+
+  a{
+    color: #893168;
+  }
+
+  a:active{
+    color: #893168;
+  }
+
+  a:hover{
+    color: #893168;
+    text-decoration: underline;
+  }
+
+  h1, h2, h3{
+    color: #00a200;
+  }
+
+
+  .wrapper{
+    display:grid;
+    grid-template-areas: "hd"
+    "nv"
+    "mn"
+    "ft";
+    /* grid-template-rows: 150px; */
+    /* padding: 20px; */
+  }
+
+  .wrapper > header {
+    grid-area: hd;
+    background: #00a200;
+    /* url("/images/muttfield.jpg"); */
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-repeat: no-repeat;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  .wrapper > nav {
+    grid-area: nv;
+    background-color: #893168;
+    color: white;
+
+  }
+  .wrapper > main {
+    grid-area: mn;
+    min-height: 400px;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-right: 25px;
+  }
+  .wrapper > footer {
+    grid-area: ft;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    /* height: 80px; */
+    padding: 20px;
+  }
+
+  .footer{
+    background: #00a200;
+    color: #fff;
+
+  }
+
+  .update-delete{
+    display: flex;
+    flex-direction: row;
+    font-size: .9em;
+  }
+
+  input[type="submit"]{
+    /* background-color: #893168; */
+    color: #893168;
+    font-family: verdana;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    text-decoration: underline;
+  }
+
+  input, select{
+    border: 1px solid #CCCCCC;
+  }
+
+  input:focus, select:focus {
+    /* border-color: rgba(0, 168, 0, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 162, 0, 0.6);
+    outline: 0 none; */
+    outline-color: rgba(0, 168, 0, 0.8);
+  }
+  /* end queries */
+}
+
+
+.wrapper{
+  /* 1 fraction and 3 fraction on the right = 4 so 1/4th, 3/4ths */
+  /* grid-template-columns: 1fr 3fr; */
+  /* how the areas will be distributed in the two columns created above */
+  grid-template-areas:
+  "hd"
+  "nv"
+  "mn"
+  "ft";
 }
 
 body{
@@ -40,7 +187,6 @@ nav a:active{
 nav a:hover{
   color: #E0DBDB;
   text-decoration: underline;
-  /* text-decoration-color: red;  */
 }
 
 a{
@@ -54,7 +200,6 @@ a:active{
 a:hover{
   color: #893168;
   text-decoration: underline;
-  /* text-decoration-color: red;  */
 }
 
 h1, h2, h3{
@@ -65,9 +210,9 @@ h1, h2, h3{
 .wrapper{
   display:grid;
   grid-template-areas: "hd"
-                       "nv"
-                       "mn"
-                       "ft";
+  "nv"
+  "mn"
+  "ft";
   /* grid-template-rows: 150px; */
   /* padding: 20px; */
 }
@@ -75,7 +220,7 @@ h1, h2, h3{
 .wrapper > header {
   grid-area: hd;
   background: #00a200;
-   /* url("/images/muttfield.jpg"); */
+  /* url("/images/muttfield.jpg"); */
   background-repeat: no-repeat;
   background-position: top left;
   background-repeat: no-repeat;
@@ -126,6 +271,17 @@ input[type="submit"]{
   text-decoration: underline;
 }
 
-form {
+input, select{
+  border: 1px solid #CCCCCC;
+}
 
+input:focus, select:focus {
+  /* border-color: rgba(0, 168, 0, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 162, 0, 0.6);
+  outline: 0 none; */
+  outline-color: rgba(0, 168, 0, 0.8);
+}
+
+label {
+  white-space: nowrap;
 }

@@ -1,5 +1,6 @@
 <h1>Schedule a Session</h1>
 <form class="" action="/sessions/:id" method="post">
+  <p>
   <label for="course-selection">Select a course:</label>
   <select class="" name="course_id" id="course-selection">
     <% for course in @courses %>
@@ -8,7 +9,10 @@
   </select>
   <label for="start-time-field">Start Time</label>
   <input type="time" name="start_time" value="" id="start-time-field">
+</p>
+<p>
   <div class="update-delete">
     <input type="submit" name="" value="Schedule Session">
   </div>
+</p>
 </form>
