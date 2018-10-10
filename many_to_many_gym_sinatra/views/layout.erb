@@ -5,20 +5,31 @@
   <title>Muttfield Health</title>
   <link rel="stylesheet" href="/reset.css">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
   <section class="wrapper">
     <header>
       <img src="/images/muttfield.jpg" alt="" height="80">
     </header>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/members">Members</a></li>
-        <li><a href="/courses">Courses</a></li>
-        <li><a href="/sessions">Sessions</a></li>
-      </ul>
-    </nav>
+    <div class="menu-bar">
+      <a href="#main-menu" class="menu-toggle"
+        <span class="fa fa-bars">+</span>
+      </a>
+
+      <nav id="main-menu" class="main-menu">
+        <a href="#main-menu-toggle" class="menu-close" id="main-menu-close">
+          <span class="fa fa-close">x</span>
+        </a>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/members">Members</a></li>
+          <li><a href="/courses">Courses</a></li>
+          <li><a href="/sessions">Sessions</a></li>
+        </ul>
+      </nav>
+      <a href="#main-menu-toggle" class="backdrop" hidden></a>
+    </div>
       <main>
         <%= yield %>
       </main>
