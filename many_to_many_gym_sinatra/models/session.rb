@@ -112,6 +112,8 @@ def vacancies()
   vacancies = @capacity -= registered
   if vacancies <= 0
     return 0
+  else
+    return vacancies
   end
 end
 

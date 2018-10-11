@@ -3,6 +3,7 @@
 <hr>
 <% @members.each do |member| %>
   <p class="detail-title"><%= member.member_name() %></p>
+  <p>Sessions booked: <%= member.sessions.count() %></p>
   <p><a href="/members/<%= member.id %>">Member Details</a> </p>
   <hr/>
 <% end %>

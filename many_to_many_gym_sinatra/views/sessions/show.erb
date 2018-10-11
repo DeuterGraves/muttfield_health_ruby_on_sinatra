@@ -1,6 +1,9 @@
 <h1>Session Details:</h1>
 <p>
   <span class="detail-title"><%= @session.course.type %> - <%= @session.start_time %></span>
+  <p>Session Capacity:  <%= @session.capacity %></p>
+  <p>Members Registered:  <%= @session.members.count %></p>
+  <p>Available Spaces:  <%= @session.vacancies() %></p>
   <div class="update-delete">
     <form class="" action="/sessions/<%= @session.id %>/edit" method="get">
       <input type="submit" name="" value="Update Session">

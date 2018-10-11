@@ -1,15 +1,21 @@
 <h1>Edit Session Details</h1>
 <hr>
 <form class="" action="/sessions/<%= @session.id %>/edit" method="post">
-  <label for="course-selection">Course:</label>
+  <label for="course-selection">Course:
   <select class="" name="course_id" id="course-selection">
     <% for course in @courses %>
     <option value="<%= course.id %>" <%= "selected" if @session.course.type == course.type %>><%= course.type %></option>
     <% end %>
-  </select>
-  <label for="start-time-field">Start Time</label>
-  <input type="time" name="start_time" value="<%= @session.start_time %>" id="start-time-field">
+  </select></label>
+  <p>
+  <label for="start-time-field">Start Time
+  <input type="time" name="start_time" value="<%= @session.start_time %>" id="start-time-field"></label>
+</p>
+  <label for="capacity-field">Capacity
+  <input type="number" name="capacity" value="<%= @session.capacity %>" id="capacity-field"></label>
+  <p>
   <div class="update-delete">
     <input type="submit" name="" value="Update Schedule">
   </div>
+  </p>
 </form>
