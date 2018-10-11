@@ -109,8 +109,47 @@ end
 # vacancies - this will subtract count from capacity.
 def vacancies()
   registered = count()
-  @capacity -= registered
+  vacancies = @capacity -= registered
+  if vacancies <= 0
+    return 0
+  else
+    return vacancies
+  end
 end
+
+# members in the session - this is called on a session, we'll need the session's capacity.
+def on_list()
+  sql = "SELECT members.* FROM members
+    INNER JOIN bookings
+    ON members.id = bookings.member_id
+    WHERE session_id = $1
+    ORDER BY bookings.id
+    LIMIT $2;"
+
+    values = [@id, @capacity]
+
+  result = SqlRunner.run(sql, values)
+  Member.map_items(result)
+
+end
+
+
+# waitlist members
+def waitlist()
+  sql = "SELECT members.* FROM members
+    INNER JOIN bookings
+    ON members.id = bookings.member_id
+    WHERE session_id = $1
+    ORDER BY bookings.id
+    OFFSET $2;"
+
+    values = [@id, @capacity]
+
+  result = SqlRunner.run(sql, values)
+  Member.map_items(result)
+
+end
+
 
 # return course name/type
 def course()

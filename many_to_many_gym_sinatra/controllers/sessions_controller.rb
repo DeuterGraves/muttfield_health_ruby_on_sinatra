@@ -26,7 +26,8 @@ end
 # SHOW
 get "/sessions/:id" do
   @session = Session.find(params[:id])
-  @members = @session.members()
+  @members = @session.on_list()
+  @waiters = @session.waitlist()
   erb(:"sessions/show")
 end
 
