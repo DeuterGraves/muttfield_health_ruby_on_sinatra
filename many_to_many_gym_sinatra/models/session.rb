@@ -99,6 +99,12 @@ def members()
   Member.map_items(result)
 end
 
+# count members in the session - calling it on a session so session.members.count
+
+def count()
+  members().count()
+end
+
 # return course name/type
 def course()
   #get the course for the course_id in the session
