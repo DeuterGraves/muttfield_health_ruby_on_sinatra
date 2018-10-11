@@ -1,9 +1,14 @@
 <h1>Welcome to Muttfield Health!</h1>
 <p>Today's important notices for our members are:</p>
 <% for notice in @notices %>
-  <div><h3><%= notice.title %></h3>
+<div class="notice">
+  <h3><%= notice.title %></h3>
   <img src="<%= notice.photo %>" alt="<%= notice.title %>" class ="note-image">
-  <%= notice.info %>
-  <p class="author"><%= notice.author %> <%= notice.created %></p></div>
+
+  <span class="text-float"><%= notice.info %></span>
+  <p class="author"><%= notice.author %> <%= notice.created %></p>
+</div>
+
+<hr>
 
 <% end %>

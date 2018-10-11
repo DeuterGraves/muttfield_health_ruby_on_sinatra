@@ -121,9 +121,31 @@
   }
 
   .note-image{
-    display: block;
+    /* display: block; */
     width: 300px;
-    /* float: left; */
+    float: left;
+    padding: 15px;
+  }
+
+  .notice h3{
+    padding-left: 20px;
+  }
+
+  .text-float{
+    display:block;
+    /* float: right;  */
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 5px;
+  }
+
+  .notice{
+    height: 300px;
+  }
+
+  .author{
+    font-style: italic;
+    font-size: .75em;
   }
 
   input[type="submit"]{
