@@ -1,5 +1,7 @@
 <h1>Book a class for a member</h1>
 <hr>
+<% exclude_sessions = @this_member.exclude_sessions() %>
+<% avail = @this_member.available_sessions(exclude_sessions) %>
   <form class="" action="/bookings/:id" method="post">
     <p>
     <label for="member-selection">Member:
@@ -11,9 +13,10 @@
     </select></label>
     <label for="session-selection">Session:
     <select class="" name="session_id" id="session-selection">
-      <% for session in @sessions %>
-      <option value="<%= session.id %>"><%= session.course.type %> - <%= session.start_time %>
-      </option>
+      <% for session in avail %>
+
+        <option value="<%= session.id %>"><%= session.course.type %> - <%= session.start_time %>
+        </option>
       <% end %>
     </select></label>
   </p>

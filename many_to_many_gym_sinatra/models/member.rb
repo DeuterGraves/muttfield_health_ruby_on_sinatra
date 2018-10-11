@@ -124,5 +124,19 @@ def member_name()
   return "#{@f_name} #{@l_name}"
 end
 
+def exclude_sessions()
+  bookings = bookings()
+  array = []
+  for booking in bookings
+    array << booking.session.start_time
+  end
+  array
+end
+
+def available_sessions(exclude_sessions)
+  sessions = Session.all()
+  data = sessions.reject{|session| exclude_sessions.include?(session.start_time)}
+end
+
 # end class
 end

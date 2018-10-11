@@ -12,6 +12,7 @@ get "/bookings/:id/new" do
   @this_member = Member.find(params[:id])
   @sessions = Session.sorted_by_course()
   @members = Member.all()
+  @bookings = @this_member.bookings()
   erb(:"bookings/m_new")
 end
 
