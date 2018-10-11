@@ -1,10 +1,12 @@
 <h1>Book a member into a session</h1>
 <hr>
+<% not_these = @this_session.exclude_members() %>
+<% these = @this_session.available_members(not_these) %>
 <p>
   <form class="" action="/bookings/:id" method="post">
     <label for="member-selection">Member:
     <select class="" name="member_id" id="member-selection">
-      <% for member in @members %>
+      <% for member in these %>
       <option value="<%= member.id %>"><%= member.member_name %>
       </option>
       <% end %>

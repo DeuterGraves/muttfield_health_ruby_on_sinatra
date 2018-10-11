@@ -112,8 +112,6 @@ def vacancies()
   vacancies = @capacity -= registered
   if vacancies <= 0
     return 0
-  else
-    return vacancies
   end
 end
 
@@ -170,6 +168,22 @@ def booking()
   data = SqlRunner.run(sql,values)
   Booking.hash_result(data)
 end
+
+# array of member ids already in this session
+def exclude_members()
+  members_booked = members()
+  array = []
+  for member in members_booked
+    array << member.id
+  end
+  array
+end
+
+def available_members(exclude_members)
+  members = Member.all()
+  data = members.reject{|member| exclude_members.include?(member.id)}
+end
+
 
 #handy: sessions sorted by start time
 def self.sorted_start_times()

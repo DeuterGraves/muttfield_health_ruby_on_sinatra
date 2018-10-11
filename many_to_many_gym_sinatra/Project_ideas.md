@@ -19,6 +19,7 @@ Extensions:
   - this will also be used for the query offset.
   - wait list count
   - wait list will need to be added to the session details page.
-  
+
 - more member details(contact? age? ability? interests?, membership level)
+- keep member from being booked from the new_s page... pull them from the drop down.
 - cancel operations (book a class, edit etc. - on the news and the edits)
