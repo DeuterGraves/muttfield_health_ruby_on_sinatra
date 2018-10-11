@@ -1,7 +1,8 @@
 <h1>Book a class for a member</h1>
 <hr>
 <% exclude_sessions = @this_member.exclude_sessions() %>
-<% avail = @this_member.available_sessions(exclude_sessions) %>
+<% avail_sesh = @this_member.available_sessions(exclude_sessions) %>
+<% avail = avail_sesh.sort_by {|session| [session.course.type, session.start_time]} %>
   <form class="" action="/bookings/:id" method="post">
     <p>
     <label for="member-selection">Member:

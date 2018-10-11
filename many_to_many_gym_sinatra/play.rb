@@ -5,10 +5,11 @@ require_relative("./models/course")
 require_relative("./models/session")
 require_relative("./models/announcement")
 
-
-notice1 = Announcement.new({"title" => "Couch to 5k", "info" => "In preparation for the city's annual fun run fundraiser, Muttfield Health will be starting several 'Couch to 5k' training groups - book your session now and see if we can't fail to put the fun right back into 'fun run fundraiser'!", "author" => "Michal", "photo" => "/images/couchto5k.jpg"})
-
-notice1.save()
+p member1= Member.find(163)
+p " "
+p exclude = member1.exclude_sessions()
+p " "
+p avail = member1.available_sessions(exclude)
 
 
 binding.pry
