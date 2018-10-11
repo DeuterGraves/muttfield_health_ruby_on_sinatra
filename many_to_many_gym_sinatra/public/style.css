@@ -140,7 +140,7 @@
   }
 
   .notice{
-    height: 350px;
+    min-height: 250px;
   }
 
   .author{
