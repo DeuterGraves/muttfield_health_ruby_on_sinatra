@@ -1,4 +1,4 @@
-require("pry")
+# require("pry")
 require_relative("../models/announcement.rb")
 
 Announcement.delete_all()
@@ -26,6 +26,6 @@ notice4.save()
 # member2.update()
 #
 #
-
-binding.pry
-p "let's get physical"
+#
+# binding.pry
+# p "let's get physical"

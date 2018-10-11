@@ -46,7 +46,8 @@ class Announcement
     @id = string_id.to_i
 
     string_created = result_hash["created"]
-    @created = string_created
+    simple_time = string_created.slice(0..15)
+    @created = simple_time
   end
 
 
@@ -87,6 +88,10 @@ class Announcement
 
     values = [id]
     SqlRunner.run(sql,values)
+  end
+
+  def simple_time()
+    simple_time = @created.slice!(0..15)
   end
 
 end
