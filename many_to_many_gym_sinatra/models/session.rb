@@ -130,14 +130,14 @@ def self.sorted_by_course()
   sorted = sessions.sort_by {|session| [session.course.type, session.start_time]}
 end
 
-# def sort()
-# def self.sort_sessions()
-#   sessions.sort_by {|session| [session.course.type, session.start_time]}
-# end
-#
-# def self.sort_sesh(array)
-#   array.sort_by {|session| [session.course.type, session.start_time]}
-# end
+
+def sort_sessions()
+  sessions.sort_by {|session| [session.course.type, session.start_time]}
+end
+
+def sort_sesh(array)
+  array.sort_by {|session| [session.course.type, session.start_time]}
+end
 
 #class end
 end

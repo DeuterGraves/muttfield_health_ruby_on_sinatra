@@ -14,7 +14,7 @@
 <h2>Members Registered</h2>
 <hr>
 <% @members.each do |member| %>
-<p><%= member.member_name() %></p>
+<p><a href="/members/<%= member.id %>"><%= member.member_name() %></a></p>
 <div class="update-delete">
   <form class="" action="/bookings/<%= member.booking(@session.id).id %>/edit" method="get">
     <input type="submit" name="" value="Update Booking">

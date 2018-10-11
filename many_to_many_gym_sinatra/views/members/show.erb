@@ -14,7 +14,7 @@
 <p><a href="/bookings/<%= @member.id %>/new"> Book a session</a></p>
 <hr>
 <% @sessions.each do |session| %>
-<p><%= session.course.type %> - <%= session.start_time %></p>
+<p><a href="/sessions/<%= session.id %>"><%= session.course.type %> - <%= session.start_time %></a></p>
 <div class="update-delete">
   <form method="get" action="/bookings/<%= session.booking().id %>/edit">
     <input type="submit" value="Update Booking"/>

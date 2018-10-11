@@ -10,6 +10,8 @@ Extensions:
 
 - FIX SESSION SORTING!!!
 
+- go to member from session details
+
 - wait list
 - more member details(contact? age? ability? interests?, membership level)
 - cancel operations (book a class, edit etc. - on the news and the edits)
