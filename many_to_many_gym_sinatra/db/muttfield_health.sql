@@ -22,7 +22,6 @@ CREATE TABLE sessions(
   start_time VARCHAR(255),
   capacity INT2
   -- title
-  -- capacity
   -- price/member level
   -- day
 );

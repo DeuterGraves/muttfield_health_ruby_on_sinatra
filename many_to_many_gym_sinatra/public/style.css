@@ -64,9 +64,9 @@
   .wrapper{
     display:grid;
     grid-template-areas: "hd"
-    "nv"
-    "mn"
-    "ft";
+                         "nv"
+                         "mn"
+                         "ft";
     /* grid-template-rows: 150px; */
     /* padding: 20px; */
   }
