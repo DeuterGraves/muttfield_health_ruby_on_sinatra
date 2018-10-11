@@ -4,6 +4,7 @@
 <% @sessions.each do |session| %>
   <p><span class="detail-title"> <%= session.course.type %></span> - <%= session.start_time %> </p>
   <p>Members Registered:  <%= session.members.count %></p>
+  <p>Available Spaces:  <%= session.capacity %></p>
   <p><a href="/sessions/<%= session.id %>">Session Details</a> </p>
   <hr>
 <% end %>
