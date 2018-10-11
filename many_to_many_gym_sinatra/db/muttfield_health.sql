@@ -19,7 +19,8 @@ CREATE TABLE courses(
 CREATE TABLE sessions(
   id SERIAL8 PRIMARY KEY,
   course_id INT8 REFERENCES courses(id) ON DELETE CASCADE,
-  start_time VARCHAR(255)
+  start_time VARCHAR(255),
+  capacity INT2
   -- title
   -- capacity
   -- price/member level
@@ -38,5 +39,6 @@ CREATE TABLE announcements(
   title VARCHAR(255),
   info TEXT,
   author VARCHAR(255),
+  photo VARCHAR(255),
   created TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );

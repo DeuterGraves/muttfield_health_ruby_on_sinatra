@@ -3,6 +3,7 @@ require_relative("../models/booking.rb")
 require_relative("../models/member.rb")
 require_relative("../models/course.rb")
 require_relative("../models/session.rb")
+require_relative("../models/announcement.rb")
 
 Member.delete_all()
 Course.delete_all()
@@ -49,17 +50,19 @@ course5.save()
 course1.type = "Yoga"
 course1.update()
 
-session1 = Session.new({"course_id" => course1.id, "start_time" => "10:00"})
-session2 = Session.new({"course_id" => course2.id, "start_time" => "11:00"})
-session3 = Session.new({"course_id" => course3.id, "start_time" => "14:00"})
-session4 = Session.new({"course_id" => course2.id, "start_time" => "13:00"})
-session5 = Session.new({"course_id" => course1.id, "start_time" => "06:00"})
+session1 = Session.new({"course_id" => course1.id, "start_time" => "10:00", "capacity" => 5})
+session2 = Session.new({"course_id" => course2.id, "start_time" => "11:00","capacity" => 8})
+session3 = Session.new({"course_id" => course3.id, "start_time" => "14:00", "capacity" => 10})
+session4 = Session.new({"course_id" => course2.id, "start_time" => "13:00", "capacity" => 4})
+session5 = Session.new({"course_id" => course1.id, "start_time" => "06:00", "capacity" => 10})
+session6 = Session.new({"course_id" => course1.id, "start_time" => "06:00", "capacity" => "9"})
 
 session1.save()
 session2.save()
 session3.save()
 session4.save()
 session5.save()
+session6.save()
 
 session1.course_id = course2.id
 session1.update()

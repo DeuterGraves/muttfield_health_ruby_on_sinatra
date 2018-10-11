@@ -3,12 +3,13 @@ require_relative("../db/sql_runner.rb")
 class Session
 
 attr_reader :id
-attr_accessor :course_id, :start_time
+attr_accessor :course_id, :start_time, :capacity
 
 def initialize(options)
   @id = options["id"].to_i
   @course_id = options["course_id"].to_i
   @start_time = options["start_time"]
+  @capacity = options["capacity"].to_i
 end
 
 # single_result
@@ -34,11 +35,11 @@ end
 
 # save
 def save()
-  sql = "INSERT into sessions(course_id, start_time)
-    VALUES($1, $2)
+  sql = "INSERT into sessions(course_id, start_time, capacity)
+    VALUES($1, $2, $3)
     RETURNING id;"
 
-  values = [@course_id, @start_time]
+  values = [@course_id, @start_time, @capacity]
   result = SqlRunner.run(sql, values)
   result_hash = result[0]
   string_id = result_hash["id"]
@@ -49,11 +50,11 @@ end
 
 def update()
   sql = "UPDATE sessions
-    SET(course_id, start_time)
-    = ($1, $2)
-    WHERE id = $3;"
+    SET(course_id, start_time, capacity)
+    = ($1, $2, $3)
+    WHERE id = $4;"
 
-  values = [@course_id, @start_time, @id]
+  values = [@course_id, @start_time, @capacity, @id]
   SqlRunner.run(sql,values)
 end
 
@@ -103,6 +104,12 @@ end
 
 def count()
   members().count()
+end
+
+# vacancies - this will subtract count from capacity.
+def vacancies()
+  registered = count()
+  @capacity -= registered
 end
 
 # return course name/type

@@ -8,10 +8,17 @@ Extensions:
     - take classes out that they're already booked in or classes that start at the same time.  could even look at classes that start in conflicting windows with the classes they have THAT'S TOTALLY AN EXTENSION
   - using member id and time and duration of class?
 
-- FIX SESSION SORTING!!!
+√ FIX SESSION SORTING!!!
 
-- go to member from session details
+√ go to member from session details
 
 - wait list
+  - will need a capacity set on the session - at the database level
+  - will need that added to the class for Session
+  - this will be fed into the query for the LIMIT.
+  - this will also be used for the query offset.
+  - wait list count
+  - wait list will need to be added to the session details page.
+  
 - more member details(contact? age? ability? interests?, membership level)
 - cancel operations (book a class, edit etc. - on the news and the edits)

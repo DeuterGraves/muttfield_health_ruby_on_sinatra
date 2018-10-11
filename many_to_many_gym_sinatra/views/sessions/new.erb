@@ -1,14 +1,16 @@
 <h1>Schedule a Session</h1>
 <form class="" action="/sessions/:id" method="post">
   <p>
-  <label for="course-selection">Select a course:</label>
+  <label for="course-selection">Select a course:
   <select class="" name="course_id" id="course-selection">
     <% for course in @courses %>
     <option value="<%= course.id %>"><%= course.type %></option>
     <% end %>
-  </select>
-  <label for="start-time-field">Start Time</label>
-  <input type="time" name="start_time" value="" id="start-time-field">
+  </select></label>
+  <label for="start-time-field">Start Time
+  <input type="time" name="start_time" value="" id="start-time-field"></label>
+  <label for="capacity-field">Capacity
+  <input type="number" name="capacity" value="" id="capacity-field"></label>
 </p>
 <p>
   <div class="update-delete">
