@@ -117,7 +117,7 @@ def vacancies()
   end
 end
 
-# members in the session - this is called on a session, we'll need the session's capacity.
+# members in the session
 def on_list()
   sql = "SELECT members.* FROM members
     INNER JOIN bookings
@@ -130,9 +130,7 @@ def on_list()
 
   result = SqlRunner.run(sql, values)
   Member.map_items(result)
-
 end
-
 
 # waitlist members
 def waitlist()
@@ -147,7 +145,6 @@ def waitlist()
 
   result = SqlRunner.run(sql, values)
   Member.map_items(result)
-
 end
 
 
@@ -199,7 +196,7 @@ def self.sorted_by_course()
 end
 
 
-def sort_sessions()
+def self.sort_sessions(sessions)
   sessions.sort_by {|session| [session.course.type, session.start_time]}
 end
 

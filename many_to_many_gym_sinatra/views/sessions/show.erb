@@ -28,17 +28,21 @@
 </div>
 <hr>
 <% end %>
-<h2>Waitlist</h2>
-<hr>
-<% @waiters.each do |waiter| %>
-<p><a href="/members/<%= waiter.id %>"><%= waiter.member_name() %></a></p>
-<div class="update-delete">
-  <form class="" action="/bookings/<%= waiter.booking(@session.id).id %>/edit" method="get">
-    <input type="submit" name="" value="Update Booking">
-  </form>
-  <form class="" action="/bookings/<%= waiter.booking(@session.id).id %>/delete" method="post">
-    <input type="submit" name="" value="Delete Booking">
-  </form>
-</div>
-<hr>
+<div>
+<% if @session.members.count < @session.capacity %>
+  <h2>Waitlist</h2>
+  <hr>
+  <% @waiters.each do |waiter| %>
+  <p><a href="/members/<%= waiter.id %>"><%= waiter.member_name() %></a></p>
+  <div class="update-delete">
+    <form class="" action="/bookings/<%= waiter.booking(@session.id).id %>/edit" method="get">
+      <input type="submit" name="" value="Update Booking">
+    </form>
+    <form class="" action="/bookings/<%= waiter.booking(@session.id).id %>/delete" method="post">
+      <input type="submit" name="" value="Delete Booking">
+    </form>
+  </div>
+  <hr>
+  <% end %>
 <% end %>
+</div>

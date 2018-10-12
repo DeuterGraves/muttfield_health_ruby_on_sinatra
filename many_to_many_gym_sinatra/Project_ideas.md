@@ -23,3 +23,15 @@ Extensions:
 - more member details(contact? age? ability? interests?, membership level)
 √ keep member from being booked from the new_s page... pull them from the drop down.
 - cancel operations (book a class, edit etc. - on the news and the edits)
+
+
+
+an if statement on load to show or hid the waitlist-
+check for waitlist length at the controller level and set true/false there, then open up
+<div>
+  <% if @show_add_new_coffee_button == true %>
+    <form  action="/roasters/new" method="get">
+      <input type="submit" name="" value="Add New Roaster">
+    </form>
+  <% end %>
+</div>
