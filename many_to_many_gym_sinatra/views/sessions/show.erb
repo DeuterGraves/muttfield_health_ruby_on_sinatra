@@ -29,7 +29,7 @@
 <hr>
 <% end %>
 <div>
-<% if @session.members.count < @session.capacity %>
+<% if @session.members.count > @session.capacity %>
   <h2>Waitlist</h2>
   <hr>
   <% @waiters.each do |waiter| %>

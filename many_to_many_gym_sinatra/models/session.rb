@@ -109,7 +109,8 @@ end
 # vacancies - this will subtract count from capacity.
 def vacancies()
   registered = count()
-  vacancies = @capacity -= registered
+  number = @capacity
+  vacancies = number -= registered
   if vacancies <= 0
     return 0
   else
