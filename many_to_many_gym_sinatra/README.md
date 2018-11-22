@@ -33,6 +33,7 @@ Announcements on the Gym Home Page
 ### Project Process:
 
 ### Given More Time:
+I would do a more thorough job of preventing double booking
 
 
 ### Setup
