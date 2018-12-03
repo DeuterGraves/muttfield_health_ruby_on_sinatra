@@ -32,3 +32,9 @@ Extensions:
 
 √ an if statement on load to show or hid the waitlist-
 check for waitlist length at the controller level and set true/false there, then open up
+
+
+- Rooms for classes
+- Membership levels
+- classes not available for certain member levels
+- prevent booking classes for the same time in the same room
