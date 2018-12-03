@@ -157,6 +157,7 @@
     border: none;
     text-decoration: underline;
     background-color: transparent;
+    background: none;
   }
 
   input, select{
@@ -311,6 +312,7 @@ input[type="submit"]{
   cursor: pointer;
   border: none;
   text-decoration: underline;
+  background:none;
 }
 
 input, select{
